@@ -9,11 +9,11 @@
  * Return: string
  */
 
-char *pprint_c(va_list list)
+char *print_c(va_list list)
 {
 	static char s[2] = {0,'\0'};
 	
-	s[0] = va_arg(lst, int);
+	s[0] = va_arg(list, int);
 	
 	if (s[0] == '\0')
 		return ("");

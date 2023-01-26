@@ -15,19 +15,19 @@ int _printf(const char *format, ...)
 	char *buff, *s;
 	va_list list;
 	len = 0;
-	print f_list[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{"i", print_i},
-		{"d", print_i},
-		{"u", print_u},
-		{"b", print_b},
-		{"o", print_o},
-		{"r", print_r},
-		{"X", print_h},
-		{"x", print_h_lower},
-		{"R", rot13},
-		{NULL, NULL}	
+	flags f_list[] = {
+		{'c', print_c},
+		{'s', print_s},
+		{'i', print_i},
+		{'d', print_i},
+		{'u', print_u},
+		{'b', print_b},
+		{'o', print_o},
+		{'r', print_r},
+		{'X', print_h},
+		{'x', print_h_lower},
+		{'R', rot13},
+		{'\0', NULL}	
 	};
 	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
@@ -46,11 +46,11 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == ' ')
 				i += get_position(format, i);
-			for (j = 0; f_list[j].f != NULL; j++)
+			for (j = 0; f_list[j].y != NULL; j++)
 			{
-				if (format[i + 1] == *(f_list[j].c))
+				if (format[i + 1] == *(f_list[j].x))
 				{
-					s = f_list[j].f(list);
+					s = f_list[j].y(list);
 					if (s == NULL)
 						return (-1);
 					_strlen(s);
@@ -60,7 +60,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (f_list[j].f == NULL)
+			if (f_list[j].y == NULL)
 			{
 				buff[len] = format[i];
 				len++;
