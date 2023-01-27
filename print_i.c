@@ -24,9 +24,9 @@ char *print_i(va_list list)
 	int divisor = 1000000000;
 	char *output;
 	int num = va_arg(list, int);
-	int len = _numlen(num);
+	int l = len(num);
 
-	output = malloc(len * sizeof(char) + 1 + neg);
+	output = malloc(l * sizeof(char) + 1 + neg);
 
 	if (output == NULL)
 	{
@@ -58,11 +58,11 @@ char *print_i(va_list list)
 		{
 			digit = _abs(digit);
 		}
-		if (digit != 0 || (len >= 0  && output[i - 1] >= '0'))
+		if (digit != 0 || (l >= 0  && output[i - 1] >= '0'))
 		{
 			output[i] = digit + '0';
 			i++;
-			len--;
+			l--;
 		}
 		divisor /= 10;
 	}

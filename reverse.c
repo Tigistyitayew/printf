@@ -13,7 +13,7 @@
 void *reverse_string(char *s)
 {
 	char b;
-	int i, x, a;
+	int i, x, j;
 
 	if (s == NULL)
 		return (0);

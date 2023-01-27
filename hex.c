@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_hex - print hexadecimal from decimal
+ * print_h - print hexadecimal from decimal
  * @list: list
  * Return: pointer to string
  */
@@ -11,9 +11,9 @@ char *print_h(va_list list)
 	char *output;
 	int i = 0;
 	int tmp;
-	int len = _numlen(num);
+	int l = len(num);
 
-	output = malloc(sizeof(char) * len + 1);
+	output = malloc(sizeof(char) * l + 1);
 
 	if (output == NULL)
 	{
@@ -47,7 +47,7 @@ char *print_h(va_list list)
 		num = num / 16;
 	}
 
-	rev_string(output);
+	reverse_string(output);
 	output[i] = '\0';
 
 	return (output);

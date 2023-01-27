@@ -13,21 +13,22 @@ int _printf(const char *format, ...)
 {
 	int i, j, len;
 	char *buff, *s;
-	va_list list;
 	len = 0;
+	va_list list;
+
 	flags f_list[] = {
-		{'c', print_c},
-		{'s', print_s},
-		{'i', print_i},
-		{'d', print_i},
-		{'u', print_u},
-		{'b', print_b},
-		{'o', print_o},
-		{'r', print_r},
-		{'X', print_h},
-		{'x', print_h_lower},
-		{'R', rot13},
-		{'\0', NULL}	
+		{"c", print_c},
+		{"s", print_s},
+		{"i", print_i},
+		{"d", print_i},
+		{"u", print_u},
+		{"b", print_b},
+		{"o", print_o},
+		{"r", print_r},
+		{"X", print_h},
+		{"x", print_h_lower},
+		{"R", rot13},
+		{NULL, NULL}	
 	};
 	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)

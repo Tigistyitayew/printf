@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <limits.h>
-#include "holberton.h"
+#include "main.h"
 /**
- * _numlen - length of number
+ * len - length of number
  * @n: int
  * Return: length
  */
-int _numlen(int n)
+int len(int n)
 {
-	int len = 0;
+	int x = 0;
 
 	while (n / 10 != 0)
 	{
-		len++;
+		x++;
 		n /= 10;
 	}
-	return (len);
+	return (x);
 }

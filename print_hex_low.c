@@ -11,9 +11,9 @@ char *print_h_lower(va_list list)
 	char *output;
 	int i = 0;
 	int tmp;
-	int len = _numlen(num);
+	int l = len(num);
 
-	output = malloc(sizeof(char) * len + 1);
+	output = malloc(sizeof(char) * l + 1);
 
 	if (output == NULL)
 	{

@@ -11,7 +11,7 @@ int _printf(const char *format, ...);
 struct data_types
 {
 	char *x;
-	char *(*y)(va_list);
+	char *(*y)(va_list list);
 };
 typedef struct data_types flags;
 int get_position(const char *s, int n);
