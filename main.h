@@ -32,5 +32,6 @@ char *print_h(va_list list);
 char *print_h_lower(va_list list);
 char *print_r(va_list list);
 int len(int n);
+char *rot13(va_list list);
 
 #endif

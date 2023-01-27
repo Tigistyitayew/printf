@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 {
 	int i, j, len;
 	char *buff, *s;
-	len = 0;
 	va_list list;
 
 	flags f_list[] = {
@@ -30,12 +29,14 @@ int _printf(const char *format, ...)
 		{"R", rot13},
 		{NULL, NULL}	
 	};
+
 	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
 	{
 		free(buff);
 		return (-1);
 	}
+	len = 0;
 	va_start(list, format);
 	if (format == NULL || list == NULL)
 		return(-1);
